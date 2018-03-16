@@ -1,0 +1,27 @@
+body{
+    background-color: #ddd;
+}
+
+
+.hide{
+    display:none;
+}
+
+
+.status-box{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    
+}
+.green{
+    background-color: green;
+}
+
+.red{
+    background-color: red;
+
+}
+.yellow{
+    background-color: yellow;
