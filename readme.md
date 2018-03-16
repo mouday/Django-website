@@ -9,23 +9,23 @@
     数据库：sqlite
 
 # 项目主要功能截图：
-    登录：
-        ![登录]("img\login.png")
+登录：
+![登录](img\login.png)
 
-    主页：
-        ![主页]("img\index.png")
+主页：
+![主页](img\index.png)
     
-    增加：
-        ![主页]("img\add.png")
+增加：
+![主页](img\add.png)
 
-    删除：
-        ![主页]("img\delete.png")
+删除：
+![主页](img\delete.png)
 
-    修改：
-        ![主页]("img\update.png")
+修改：
+![主页](img\update.png)
 
-    查询：
-        ![主页]("img\select.png")
+查询：
+![主页](img\select.png)
 
 # 项目主要结构：
     mysite
