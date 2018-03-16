@@ -9,22 +9,29 @@
     数据库：sqlite
 
 # 项目主要功能截图：
-登录：
+
+<center>登录</center>
+
 ![登录](img\login.png)
 
-主页：
+<center>主页</center>
+
 ![主页](img\index.png)
     
-增加：
+<center>增加</center>
+
 ![主页](img\add.png)
 
-删除：
+<center>删除</center>
+
 ![主页](img\delete.png)
 
-修改：
+<center>修改</center>
+
 ![主页](img\update.png)
 
-查询：
+<center>查询</center>
+
 ![主页](img\select.png)
 
 # 项目主要结构：
