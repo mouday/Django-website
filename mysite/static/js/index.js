@@ -114,6 +114,10 @@
     }
 
     var selected_opt = $.cookie("per_page");
+    console.log("selected_opt: "+selected_opt)
+    if(selected_opt == null) {
+        selected_opt = 10;  //给定默认值
+    }
     $("#per_page").val(selected_opt); // 设置select选中值
 
      

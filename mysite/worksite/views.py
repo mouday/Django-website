@@ -32,7 +32,8 @@ class Index(View):
         start = (page-1) * per_page
         end = per_page + start
 
-        items_all = models.Item.objects.all()
+        # 按时间进行排序，最后添加的显示在最前面
+        items_all = models.Item.objects.all().order_by("-time")
         items = items_all[start : end]
         states = models.State.objects.all()
 
