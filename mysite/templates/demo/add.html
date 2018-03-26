@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add</title>
+</head>
+<body>
+    <form action="/demo/add", method="post">
+        {% csrf_token %}
+        {{ addform }}
+        <p><input type="submit" value="求和"></p>
+    </form>
+</body>
+</html>
