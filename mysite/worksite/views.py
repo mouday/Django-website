@@ -49,7 +49,7 @@ class Index(View):
         if title =="None": title=""
 
         logging.debug("search-title：%s %s"%(type(title), title))
-        logging.debug("search-date%s"%date)
+        logging.debug("search-date: %s"%date)
 
         struct_time = time.strptime(date, "%Y-%m-%d")
         logging.debug("day: %s"%struct_time.tm_mday)
