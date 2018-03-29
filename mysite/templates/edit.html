@@ -1,0 +1,151 @@
+{% extends "index.html"%}
+
+{% block  title %}
+    <title>编辑项目</title>
+    <link href="/static/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="/static/css/edit.css" rel="stylesheet">
+{% endblock %}
+
+{# 工具条内容不显示 #}
+{% block tool%}{% endblock%}
+
+{# 搜索框不显示 #}
+{% block search %}{% endblock %}
+
+
+{# 表格不显示 #}
+{% block table %}
+
+<div class="form-header">
+    <h1>{{ edit_mode }}</h1>  
+</div>
+
+<div class="form-body">
+<form action="/edit" method="post" class="form-horizontal">
+        {% csrf_token %}
+        <div class="form-group hide">
+            <label>id:</label>
+            <input id="edit-id" type="text" name="edit-id" value="{{ item.uid }}" placeholder="id" class="form-control edit-input">
+        </div>
+
+        <div class="form-group">
+            <label>运营商：</label>
+            <input id="edit-area" type="text" name="edit-area" value="{{ item.area }}" placeholder="运营商" class="form-control edit-input">
+        </div>
+
+        <div class="form-group"><label>批次号：</label>
+            <input id="edit-title" type="text" name="edit-title" value="{{ item.title }}" placeholder="批次号" class="form-control edit-input">
+        </div>
+        
+        <div class="form-group">
+            <label>排产日期：</label>
+            <div id="edit-date" class="input-group date form_date date-box" data-date-format="yyyy-mm-dd">
+                <input class="form-control" size="16" type="text" value="{{ item.time|date:'Y-m-d' }}" name="edit-time" readonly>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>白班/夜班：</label>
+            <span class="blank-box"></span>
+            <select id="edit-grade" name="edit-grade" class="status-select form-control">
+                {% for grade in grades %}
+                {% ifequal grade.name item.grade.name %}
+                    <option value="{{ grade.uid }}" selected="selected">{{ grade.name}}</option>
+                {% else %}
+                    <option value="{{ grade.uid }}">{{ grade.name}}</option>
+                {% endifequal %}
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>预个数据：</label>
+            <span class="status-box"></span>
+            <select id="edit-predata" name="edit-predata" class="status-select form-control">
+                {% for state in states %}
+                {% ifequal state.name item.predata.name %}
+                    <option value="{{ state.uid }}" selected="selected">{{ state.name}}</option>
+                {% else %}
+                    <option value="{{ state.uid }}">{{ state.name}}</option>
+                {% endifequal %}
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>个人数据：</label>
+            <span class="status-box"></span>
+            <select id="edit-data" name="edit-data" class="status-select form-control">
+                {% for state in states %}
+                {% ifequal state.name item.data.name %}
+                    <option value="{{ state.uid }}" selected="selected">{{ state.name}}</option>
+                {% else %}
+                    <option value="{{ state.uid }}">{{ state.name}}</option>
+                {% endifequal %}
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>标签状态：</label>
+            <span class="status-box"></span>
+            <select id="edit-label" name="edit-label" class="status-select form-control">
+                {% for state in states %}
+                    {% ifequal state.name item.label.name %}
+                        <option value="{{ state.uid }}" selected="selected">{{ state.name}}</option>
+                    {% else %}
+                        <option value="{{ state.uid }}">{{ state.name}}</option>
+                    {% endifequal %}
+                {% endfor %}
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>卡基状态：</label>
+            <span class="status-box"></span>
+            <select id="edit-card" name="edit-card" class="status-select form-control">
+                {% for state in states %}
+                    {% ifequal state.name item.card.name %}
+                        <option value="{{ state.uid }}" selected="selected">{{ state.name}}</option>
+                    {% else %}
+                        <option value="{{ state.uid }}">{{ state.name}}</option>
+                    {% endifequal %}
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group"><label>模块状态：</label>
+            <span class="status-box"></span>
+            <select id="edit-chip" name="edit-chip" class="status-select form-control">
+                {% for state in states %}
+                    {% ifequal state.name item.chip.name %}
+                        <option value="{{ state.uid }}" selected="selected">{{ state.name}}</option>
+                    {% else %}
+                        <option value="{{ state.uid }}">{{ state.name}}</option>
+                    {% endifequal %}
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>备注：</label>
+            <textarea id="edit-content" name="edit-content" placeholder="备注" class="form-control edit-input" rows="3">{{ item.content }}</textarea>
+        </div>
+
+    <div class="form-group">
+        <button type="button" class="btn btn-default"><a href="/">取消</a></button>  
+        <button type="submit" class="btn btn-primary">确认{{ edit_mode }}</button>  
+    </div>  
+
+</form>
+</div>
+{% endblock %}
+
+{# 分页效果不显示 #}
+{% block page_list %}{% endblock %}
+
+{% block endbody %}
+    <script src="/static/js/edit.js"></script>
+{% endblock %}

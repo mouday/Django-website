@@ -7,14 +7,25 @@ body{
     display:none;
 }
 
+.logo{
+    height: 50px;
+}
 
-.status-box{
+.item-content{
+    width:100PX;
+    height: 18px;
+    overflow:hidden;
+    /*超出点点显示*/
+    text-overflow: ellipsis;  
+}
+
+.status-box, .blank-box{
     display: inline-block;
     width: 10px;
     height: 10px;
     margin-right: 5px;
-    
 }
+
 .green{
     background-color: green;
 }
@@ -25,3 +36,153 @@ body{
 }
 .yellow{
     background-color: yellow;
+}
+
+.pg-main{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+}
+.pg-head{
+    height:48px;
+    line-height: 48px;
+    background-color: rgba(0, 145, 230, 0.66);
+    margin: 0 auto;
+}
+.pg-body{
+    padding: 0 15px 20px;
+}
+
+.pg-head .left{
+    height:40px;
+    margin-left: 20px;
+    float:left;
+    color:white;
+    overflow: hide;
+    font-size:25px;
+    /*background-color: red;*/
+}
+
+.pg-head .username{
+    width:150px;
+    height:40px;
+    margin-right: 5px;
+    float:right;
+    color:white;
+    overflow: hide;
+    /*background-color: red;*/
+}
+
+.pg-head .groupname{
+    width: 150px;
+    height: 40px;
+    margin-right: 5px;
+    float: right;
+    color: white;
+    overflow: hide;
+    /*background-color: red;*/
+}
+
+.pg-head .right{
+    width:100px;
+    height:40px;
+    float:right;
+    color:white;
+    overflow: hide;
+    cursor: pointer;
+}
+
+.pg-head .right .logout {
+    display: inline-block;
+    padding: 0px 15px;
+    color: white;
+
+}
+
+.pg-head .right .logout:hover {
+    background-color: red;
+}
+
+.form-control{
+    width: 250px;
+    display: inline-block;
+}
+.status-select{
+    width: 100px;
+}
+
+.edit-form{
+/*    width:400px;*/
+    margin: 0 auto;
+}
+
+.modal-body p label{
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    /*float: right;*/
+}
+.center{
+    text-align: center;
+}
+
+.table th{
+    text-align: center;
+}
+
+.btn a{
+    text-decoration:none; 
+    color:#333; 
+
+}
+
+.pg-tool{
+    height:48px;
+    line-height: 48px;
+}
+.pg-tool .element{
+    margin-top:8px;
+    margin-right: 20px;
+}
+
+.page{
+    text-align: center;
+}
+
+.page .num{
+    display: inline-block;
+    padding: 0 10px;
+    margin:0 5px;
+    background-color: #ddd;
+    text-decoration:none; 
+    color:#333;
+}
+
+.page .num:hover{
+    background-color: #777;
+}
+
+.page .current{
+    background-color: #777;
+    display: inline-block;
+    padding: 0 10px;
+    margin:0 5px;
+    text-decoration:none; 
+    color:#333;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float:right;
+}
+
+.tip{
+    color: #777;
+}
+
+.pg-footer{
+    text-align: center;
+}

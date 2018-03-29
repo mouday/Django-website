@@ -9,5 +9,5 @@ urlpatterns = [
     path("delete", views.delete),
     path("edit", views.edit),
     path("init", views.init),
-    path("search", views.search),
+    url("", views.notfind)
 ]

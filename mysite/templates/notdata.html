@@ -1,0 +1,16 @@
+{% extends "index.html"%}
+
+{% block  title %}
+    <title>没有信息</title>
+{% endblock %}
+
+
+{# 表格不显示 #}
+{% block table %}
+<h1 style="text-align: center;">没有排产</h1>
+<h2 style="text-align: center;">日期：{{ search_date }}</h2>
+<h2 style="text-align: center;">订单：{{ search_title }}</h2>
+{% endblock %}
+
+{# 分页效果不显示 #}
+{% block page_list %}{% endblock %}

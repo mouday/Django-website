@@ -1,0 +1,19 @@
+.form-body{
+    width:320px;
+    margin: 0 auto;
+}
+#edit-content{
+    width: 300px;
+}
+.status-div{
+    float: left;
+    width:300px;
+    height:50px;
+    line-height: 50px;
+}
+.date-box{
+    width: 200px;
+}
+.form-header{
+    text-align: center;
+}

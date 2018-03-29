@@ -1,199 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页_流程管理系统</title>
 
+    {% block  title %}
+    <title>首页_流程管理系统</title>
+    {% endblock %}
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
-    <style type="text/css">
-        .pg-main{
-            width: 1000px;
-            margin: 0 auto;
-            background-color: white;
-        }
-        .pg-head{
-            height:48px;
-            line-height: 48px;
-            background-color: rgba(0, 145, 230, 0.66);
-            margin: 0 auto;
-        }
-        .pg-body{
-            padding: 0 15px 20px;
-        }
-        .pg-head .left{
-            height:40px;
-            margin-left: 20px;
-            float:left;
-            color:white;
-            overflow: hide;
-            font-size:25px;
-            /*background-color: red;*/
-        }
-        .pg-head .username{
-            width:150px;
-            height:40px;
-            margin-right: 5px;
-            float:right;
-            color:white;
-            overflow: hide;
-            /*background-color: red;*/
-        }
-        .pg-head .right{
-            width:100px;
-            height:40px;
-            float:right;
-            color:white;
-            overflow: hide;
-            cursor: pointer;
-        }
-        .pg-head .right .logout {
-            display: inline-block;
-            padding: 0px 15px;
-            color: white;
-
-        }
-        .pg-head .right .logout:hover {
-            background-color: red;
-        }
-        .form-control{
-            width: 250px;
-            display: inline-block;
-        }
-        .status-select{
-            width: 100px;
-        }
-        .edit-form{
-            width:400px;
-            margin: 0 auto;
-        }
-        .modal-body p label{
-            display: inline-block;
-            width: 100px;
-            text-align: left;
-            /*float: right;*/
-        }
-        .center{
-            text-align: center;
-        }
-        .table th{
-            text-align: center;
-        }
-        .btn a{
-            text-decoration:none; 
-            color:#333; 
-
-        }
-        .pg-tool{
-            height:48px;
-            line-height: 48px;
-        }
-        .pg-tool .element{
-            margin-top:8px;
-            margin-right: 20px;
-        }
-        .page{
-            text-align: center;
-        }
-        .page .num{
-            display: inline-block;
-            padding: 0 10px;
-            margin:0 5px;
-            background-color: #ddd;
-            text-decoration:none; 
-            color:#333;
-        }
-        .page .num:hover{
-            background-color: #777;
-        }
-        .page .current{
-            background-color: #777;
-            display: inline-block;
-            padding: 0 10px;
-            margin:0 5px;
-            text-decoration:none; 
-            color:#333;
-        }
-        .left{
-            float: left;
-        }
-        .right{
-            float:right;
-        }
-        .tip{
-            color: #777;
-        }
-    </style>
 </head>
+
+
 <body>
     <div class="pg-main">
-    <div class="pg-head">
-        <div class="left">流程管理系统</div>
-        <div class="right"><a href="/logout" class="logout">退出</a></div>
-        <div class="username">当前账号：{{ request.session.username }}</div>  
-    </div>
+        <div class="pg-head">
+            <div class="left"><a href="/"><img class="logo" src="/static/images/logo.png"></a> 物料管理系统</div>
+            <div class="right"><a href="/logout" class="logout">退出</a></div>
+            <div class="username">当前账号：<i id="current_user">{{ request.session.username }}</i></div>
+        </div>
     <div class="pg-body">
   
     <div class="pg-tool">
         <button class="btn left element" ><a href="/"><i class="fa fa-home" aria-hidden="true"></i> 首页</a></button>
         {% block tool%}
-        <button class="btn left element" ><a href="/?page={{ total }}"><i class="fa fa-fast-forward" aria-hidden="true"></i> 末页</a></button>
-        <button class="btn left element" id="add-item" data-toggle="modal" data-target="#add-mode"><i id="add-item" class="fa fa-plus-square" aria-hidden="true"></i> 添加记录</button>
-
+        
+        {# 权限验证 #}
+        {% if request.session.username == "admin" or request.session.username == "jihua" %}
+        <button class="btn left element" id="add-item"><a href="/edit"><i id="add-item" class="fa fa-plus-square" aria-hidden="true"></i> 添加订单</a></button>
+        {% endif %}
         <span class="left tip">每页显示数量：</span>
         <select id="per_page" class="form-control status-select left element">
         
         </select>
+        总数量：{{ item_count }}
         {% endblock %}
-        <form action="/search" method="get" style="display: inline;" class="right">
-        <input type="text" name="search-title" class="form-control">
-       <!--  <select class="form-control">
-            <option value="1">批次号</option>
-            <option value="2">运营商</option>
-            <option value="3">数据状态</option>
-            <option value="4">处理状态</option>
-        </select> -->
 
-        <input type="submit" class="btn" value=搜索>
+        {% block search %}
+
+        <form id="search-form" action="/" method="get" class="right form-inline">
+        <label>排产日期：</label>
+        <input id="search-date" type="date" name="search-date" class="form-control" value="{{ search_date }}">
+        <input type="search" id="search-title" name="search-title" placeholder="订单号" value="{{ search_title }}" class="form-control">
+        <input type="submit" class="btn" value="搜索订单">
         </form>
-        
+        {% endblock %}
     </div>
-    
+
+
+    {% block table %}
     <table class="table table-striped table-bordered">
-        <thead><tr><th>序号</th><th>运营商</th><th>批次号</th><th>备注</th><th>数据状态</th><th>二次处理</th><th>录入时间</th><th>编辑</th><th>删除</th></tr></thead>
+        <thead><tr><th>序号</th><th>运营商</th><th>批次号</th><th>备注</th><th>预数据</th><th>个数据</th>
+            <th>标签</th><th>卡基</th><th>模块</th><th>排产日期</th><th>白/夜</th><th>编辑</th>
+        
+        {# 权限验证 #}
+        {% if request.session.username == "admin" or request.session.username == "jihua" %}
+            <th>删除</th>
+        {% endif %}
+        </tr></thead>
         <tbody>
             {% for item in items %}
              <tr item-id="{{ item.uid }}">
                 <!-- <td name='item-id'>{{ item.uid }}</td> -->  <!--id仅调试时显示-->
-                <td>{{ forloop.counter }}</td>
+                <td>{{ start|add:forloop.counter }}</td>
                 <td name='item-area'>{{ item.area }}</td>
                 <td name='item-title'>{{ item.title }}</td>
-                <td name='item-content'>{{ item.content }}</td>
-                <td name='item-data' class="status"><span class="status-box"></span>{{ item.data.state_name }}</td>
-                <td name='item-handle' class="status"><span class="status-box"></span>{{ item.handle.state_name }}</td>
-                <td name='item-time' class="center">{{ item.time|date:"Y-m-d H:i:s" }}</td>
-                <td name='item-eidt' class="center"><i class="fa fa-edit edit" aria-hidden="true" data-toggle="modal" data-target="#eidt-mode"></i></td>
+                <td name='item-content' >
+                    <div class="item-content">{{ item.content }}</div></td>
+                <td name='item-predata' class="status"><span class="status-box"></span>{{ item.predata.name }}</td>
+                <td name='item-data' class="status"><span class="status-box"></span>{{ item.data.name }}</td>
+        
+                <td name='item-label' class="status"><span class="status-box"></span>{{ item.label.name }}</td>
+              <!--   <td name='item-template' class="status"><span class="status-box"></span>{{ item.template.name }}</td> -->
+                <td name='item-card' class="status"><span class="status-box"></span>{{ item.card.name }}</td>
+                <td name='item-chip' class="status"><span class="status-box"></span>{{ item.chip.name }}</td>
+                <!-- <td name='item-material' class="status"><span class="status-box"></span>{{ item.material.name }}</td> -->
+                <td name='item-time' class="center">{{ item.time|date:"Y-m-d" }}</td>
+                <td name='item-time' class="center">{{ item.grade.name }}</td>
+                <td name='item-eidt' class="center"><a href="/edit?uid={{ item.uid }}"><i class="fa fa-edit edit" aria-hidden="true"></i></a></td>
+                {# 权限验证 #}
+                {% if request.session.username == "admin" or request.session.username == "jihua" %}
                 <td name='item-delete' class="center"><i class="fa fa-close delete" aria-hidden="true" data-toggle="modal" data-target="#delete-mode"></i></td>
+                {% endif %}
              </tr>
             {% endfor %}
         </tbody>
     </table>
+    {% endblock %}
+
+
+<!-- 分页信息 -->
 {% block page_list %}
 <div class="page">
+
     <i id="current-page" class="hide">{{ current_page }}</i>
-    <button class="btn"><a href="/?page={{ prev_page }}">上一页</a></button>
+
+    <button class="btn"><a href="/?page=1&search-date={{ search_date }}&search-title={{ search_title }}"><i class="fa fa-fast-backward" aria-hidden="true"></i> 首页</a></button>
+
+    <button class="btn"><a href="/?page={{ prev_page }}&search-date={{ search_date }}&search-title={{ search_title }}"><i class="fa fa-backward" aria-hidden="true"></i> 上一页</a></button>
     {% for page in pages %}
     {% ifequal page current_page %}
-    <a class="current" href="/?page={{ page }}">{{ page }}</a>
+    <a class="current" href="/?page={{ page }}&search-date={{ search_date }}&search-title={{ search_title }}">{{ page }}</a>
     {% else %}
-    <a class="num" href="/?page={{ page }}">{{ page }}</a>
+    <a class="num" href="/?page={{ page }}&search-date={{ search_date }}&search-title={{ search_title }}">{{ page }}</a>
     {% endifequal %}
     {% endfor %}
-    <button class="btn"><a href="/?page={{ next_page }}">下一页</a></button>
+    <button class="btn"><a href="/?page={{ next_page }}&search-date={{ search_date }}&search-title={{ search_title }}">下一页 <i class="fa fa-forward" aria-hidden="true"></i></a></button>
+    <button class="btn"><a href="/?page={{ total }}&search-date={{ search_date }}&search-title={{ search_title }}">末页 <i class="fa fa-fast-forward" aria-hidden="true"></i></a></button>
 </div>
 {% endblock %}
+<!-- 分页信息结束 -->
+
 <!-- 删除确认框 开始-->
 <div class="modal fade" id="delete-mode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">  
     <div class="modal-dialog" role="document">  
@@ -219,138 +137,24 @@
             </div>  
         </div>  
     </div>  
-</div>  
+</div>  </div> </div> 
 <!-- 删除确认框 结束-->
 
+    <!-- 版权信息  -->
 
-<!-- 修改框 开始-->
-<div class="modal fade" id="eidt-mode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">  
-    <div class="modal-dialog" role="document">  
-        <div class="modal-content">  
-            <div class="modal-header">  
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">  
-                    <span aria-hidden="true">×</span>  
-                </button>  
-                <h4 class="modal-title" id="myModalLabel">修改</h4>  
-            </div>
-            <form action="/edit" method="post" class="edit-form">
-                {% csrf_token %}
-                <div class="modal-body">
-                    
-                    <p class="hide"><label>id:</label>
-                        <input id="edit-id" type="text" name="edit-id" value="" placeholder="id" class="form-control"></p>
-                    <p><label>运营商：</label>
-                        <input id="edit-area" type="text" name="edit-area" value="" placeholder="运营商" class="form-control"></p>
-                    <p><label>批次号：</label>
-                        <input id="edit-title" type="text" name="edit-title" value="" placeholder="批次号" class="form-control"></p>
-                    <p><label>备注：</label>
-                        <input id="edit-content" type="text" name="edit-content" value="" placeholder="备注" class="form-control"></p>
-                    <p><label>添加时间：</label><span id="edit-time" ></span></p>
-                    <p><label>数据状态：</label>
-                        <span class="status-box"></span>
-                        <select id="edit-data" name="edit-data" class="status-select form-control">
-                            {% for state in states %}
-                            <option value="{{ state.uid }}">{{ state.state_name}}</option>
-                            {% endfor %}               
-                        </select>
-    
-                    </p>
-                    <p><label>二次处理：</label>
-                        <span class="status-box"></span>
-                        <select id="edit-handle" name="edit-handle" class="status-select form-control">
-                           {% for state in states %}
-                            <option value="{{ state.uid }}">{{ state.state_name}}</option>
-                           {% endfor %}                        
-                        </select>
-                        
-                    </p>
-                    
-                </div>  
-                <div class="modal-footer">  
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>  
-                    
-                    
-                    <button type="submit" class="btn btn-primary">确认修改</button>  
-                    
-                </div>  
-            </form>
-        </div>  
-    </div>  
-</div> 
-</div> </div>
-<!-- 修改框 结束-->
-
- <!--  <h2>添加项目</h2>
-    <form action="/" method="post" class="form-inline">
-        <input type="text" name="area" placeholder="运营商（必填）" class="form-control">
-        <input type="text" name="title" placeholder="批次号（必填）" class="form-control">
-        <input type="text" name="content" placeholder="备注内容" class="form-control">
-        <input type="submit" value="提交" class="form-control">
-    </form> -->
-
-<!-- 添加框 开始-->
-<div class="modal fade" id="add-mode" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">  
-    <div class="modal-dialog" role="document">  
-        <div class="modal-content">  
-            <div class="modal-header">  
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">  
-                    <span aria-hidden="true">×</span>  
-                </button>  
-                <h4 class="modal-title" id="myModalLabel">添加</h4>  
-            </div>
-            <form action="/" method="post" class="add-form">
-                {% csrf_token %}
-                <div class="modal-body">
-                    
-                    <p><label>运营商：</label>
-                        <input id="add-area" type="text" name="area" value="" placeholder="运营商（必填）" class="form-control"></p>
-                    <p><label>批次号：</label>
-                        <input id="add-title" type="text" name="title" value="" placeholder="批次号（必填）" class="form-control"></p>
-                    <p><label>备注：</label>
-                        <input id="add-content" type="text" name="content" value="" placeholder="备注" class="form-control"></p>
-                    
-                    <p><label>数据状态：</label>
-                        <span class="status-box"></span>
-                        <select id="edit-data" name="data" class="status-select form-control">
-                            {% for state in states %}
-                            <option value="{{ state.uid }}">{{ state.state_name}}</option>
-                            {% endfor %}               
-                        </select>
-    
-                    </p>
-                    <p><label>二次处理：</label>
-                        <span class="status-box"></span>
-                        <select id="edit-handle" name="handle" class="status-select form-control">
-                           {% for state in states %}
-                            <option value="{{ state.uid }}">{{ state.state_name}}</option>
-                           {% endfor %}                        
-                        </select>
-                    </p>
-                    
-                </div>  
-                <div class="modal-footer">  
-                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>  
-                    <button type="submit" class="btn btn-primary">确认添加</button>  
-                </div>  
-            </form>
-        </div>  
-    </div>  
-</div> 
-</div> </div>
-<!-- 添加框 结束-->
+    <div class="pg-footer">
+        &copy;2018 技术支持：pengshiyuyx@gmail.com
+    </div>
+    <!-- 版权信息结束  -->
 
     <script src="/static/bootstrap-3.3.7-dist/js/jquery-3.3.1.js"></script>
     <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script src="\static\js\jquery.cookie.js"></script>
+    <script src="/static/js/jquery.cookie.js"></script>
+    <script src="/static/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="/static/js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="/static/js/index.js"></script>
-    <script type="text/javascript">
-        // $(function(){
-        // 删除cookie
-        //     $(".logout").click(function(){
-        //         $.cookie("username", "", {expires: -1});
-        //         location.reload()
-        //     })
-        // })
-    </script>
+
+    {% block endbody %}
+    {% endblock %}
 </body>
 </html>

@@ -1,0 +1,101 @@
+Thu, 29 Mar 2018 11:31:48 views.py[line:245] DEBUG user: User object (1)
+Thu, 29 Mar 2018 11:31:48 views.py[line:247] DEBUG user.name admin
+Thu, 29 Mar 2018 11:31:48 views.py[line:248] DEBUG user.pwd 123456
+Thu, 29 Mar 2018 11:31:49 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:31:49 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:31:49 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:31:49 views.py[line:52] DEBUG search-date2018-03-29
+Thu, 29 Mar 2018 11:31:49 views.py[line:55] DEBUG day: 29
+Thu, 29 Mar 2018 11:31:54 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:31:54 views.py[line:220] DEBUG uid:None
+Thu, 29 Mar 2018 11:31:54 views.py[line:228] DEBUG item: None
+Thu, 29 Mar 2018 11:32:27 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:32:27 views.py[line:151] DEBUG edit_id:
+Thu, 29 Mar 2018 11:32:27 views.py[line:152] DEBUG edit_time:2018-03-29
+Thu, 29 Mar 2018 11:32:28 views.py[line:215] DEBUG 新增成功
+Thu, 29 Mar 2018 11:32:28 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:32:28 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:32:28 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:32:28 views.py[line:52] DEBUG search-date2018-03-29
+Thu, 29 Mar 2018 11:32:28 views.py[line:55] DEBUG day: 29
+Thu, 29 Mar 2018 11:32:28 views.py[line:121] DEBUG index-get
+Thu, 29 Mar 2018 11:32:56 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:32:56 views.py[line:130] DEBUG 删除项目：uid=1
+Thu, 29 Mar 2018 11:32:56 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:32:56 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:32:56 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:32:56 views.py[line:52] DEBUG search-date2018-03-29
+Thu, 29 Mar 2018 11:32:56 views.py[line:55] DEBUG day: 29
+Thu, 29 Mar 2018 11:37:27 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:37:27 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:37:27 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:37:27 views.py[line:52] DEBUG search-date2018-03-29
+Thu, 29 Mar 2018 11:37:27 views.py[line:55] DEBUG day: 29
+Thu, 29 Mar 2018 11:37:28 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:37:28 views.py[line:220] DEBUG uid:None
+Thu, 29 Mar 2018 11:37:28 views.py[line:228] DEBUG item: None
+Thu, 29 Mar 2018 11:37:29 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:37:29 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:37:29 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:37:29 views.py[line:52] DEBUG search-date2018-03-29
+Thu, 29 Mar 2018 11:37:29 views.py[line:55] DEBUG day: 29
+Thu, 29 Mar 2018 11:37:32 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:37:32 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:37:32 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:37:32 views.py[line:52] DEBUG search-date2018-03-29
+Thu, 29 Mar 2018 11:37:32 views.py[line:55] DEBUG day: 29
+Thu, 29 Mar 2018 11:37:34 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:37:34 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:37:34 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:37:34 views.py[line:52] DEBUG search-date2018-03-29
+Thu, 29 Mar 2018 11:37:34 views.py[line:55] DEBUG day: 29
+Thu, 29 Mar 2018 11:37:37 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:37:37 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:37:37 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:37:37 views.py[line:52] DEBUG search-date2018-03-14
+Thu, 29 Mar 2018 11:37:37 views.py[line:55] DEBUG day: 14
+Thu, 29 Mar 2018 11:37:40 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:37:40 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:37:40 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:37:40 views.py[line:52] DEBUG search-date2018-03-07
+Thu, 29 Mar 2018 11:37:40 views.py[line:55] DEBUG day: 7
+Thu, 29 Mar 2018 11:37:44 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:37:44 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:37:44 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:37:44 views.py[line:52] DEBUG search-date2018-03-29
+Thu, 29 Mar 2018 11:37:44 views.py[line:55] DEBUG day: 29
+Thu, 29 Mar 2018 11:42:18 views.py[line:20] DEBUG auth-username: admin
+Thu, 29 Mar 2018 11:42:18 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:42:18 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:42:18 views.py[line:52] DEBUG search-date2018-03-29
+Thu, 29 Mar 2018 11:42:18 views.py[line:55] DEBUG day: 29
+Thu, 29 Mar 2018 11:42:23 views.py[line:265] DEBUG logout
+Thu, 29 Mar 2018 11:42:23 views.py[line:20] DEBUG auth-username: None
+Thu, 29 Mar 2018 11:42:27 views.py[line:245] DEBUG user: User object (5)
+Thu, 29 Mar 2018 11:42:27 views.py[line:247] DEBUG user.name wuliao
+Thu, 29 Mar 2018 11:42:27 views.py[line:248] DEBUG user.pwd 123456
+Thu, 29 Mar 2018 11:42:27 views.py[line:20] DEBUG auth-username: wuliao
+Thu, 29 Mar 2018 11:42:27 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:42:27 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:42:27 views.py[line:52] DEBUG search-date2018-03-29
+Thu, 29 Mar 2018 11:42:27 views.py[line:55] DEBUG day: 29
+Thu, 29 Mar 2018 11:42:31 views.py[line:20] DEBUG auth-username: wuliao
+Thu, 29 Mar 2018 11:42:31 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:42:31 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:42:31 views.py[line:52] DEBUG search-date2018-03-29
+Thu, 29 Mar 2018 11:42:31 views.py[line:55] DEBUG day: 29
+Thu, 29 Mar 2018 11:42:35 views.py[line:20] DEBUG auth-username: wuliao
+Thu, 29 Mar 2018 11:42:35 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:42:35 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:42:35 views.py[line:52] DEBUG search-date2018-03-28
+Thu, 29 Mar 2018 11:42:35 views.py[line:55] DEBUG day: 28
+Thu, 29 Mar 2018 11:42:40 views.py[line:20] DEBUG auth-username: wuliao
+Thu, 29 Mar 2018 11:42:40 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:42:40 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:42:40 views.py[line:52] DEBUG search-date2018-03-28
+Thu, 29 Mar 2018 11:42:40 views.py[line:55] DEBUG day: 28
+Thu, 29 Mar 2018 11:43:06 views.py[line:20] DEBUG auth-username: wuliao
+Thu, 29 Mar 2018 11:43:06 views.py[line:42] DEBUG current_time: 2018-03-29
+Thu, 29 Mar 2018 11:43:06 views.py[line:51] DEBUG search-title：<class 'str'> 
+Thu, 29 Mar 2018 11:43:06 views.py[line:52] DEBUG search-date2018-03-14
+Thu, 29 Mar 2018 11:43:06 views.py[line:55] DEBUG day: 14
