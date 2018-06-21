@@ -14,27 +14,27 @@
 
 <center>登录</center>
 
-![登录](img\login.png)
+![登录](img/login.png)
 
 <center>主页</center>
 
-![主页](img\index.png)
+![主页](img/index.png)
     
 <center>增加</center>
 
-![主页](img\add.png)
+![主页](img/add.png)
 
 <center>删除</center>
 
-![主页](img\delete.png)
+![主页](img/delete.png)
 
 <center>修改</center>
 
-![主页](img\update.png)
+![主页](img/update.png)
 
 <center>查询</center>
 
-![主页](img\select.png)
+![主页](img/select.png)
 
 # 项目主要结构：
     mysite
